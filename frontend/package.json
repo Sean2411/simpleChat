@@ -52,7 +52,7 @@
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "serve": "^3.1.0",
-    "express": "~4.0.0",
+    "express": "~4.17.1",
     "body-parser": "~1.0.1"
   }
 }
