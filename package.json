@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev": "ng serve && node server.js"
+    "dev": "ng serve --port=8000"
   },
   "author": "Sean Lu",
   "license": "ISC",
