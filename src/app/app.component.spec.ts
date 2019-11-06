@@ -1,10 +1,14 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { LandingComponent } from './pages/landing/landing.component';
+import { ChatComponent } from './pages/chat/chat.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        LandingComponent,
+        ChatComponent
       ],
     }).compileComponents();
   }));

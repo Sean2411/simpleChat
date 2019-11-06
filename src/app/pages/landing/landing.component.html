@@ -1,0 +1,26 @@
+<!-- <div id="login">
+  <form>
+      <div class="login-input-container">
+          <input class="login-input" type="text" placeholder="{{inputData.placeholder}}" #userName required/>
+        </div>
+        <div class="login-btn-container">
+          <button class="login-btn" (click)="enterChatRoom(userName.value)">{{buttonData.content}}</button>
+        </div>
+  </form>
+</div> -->
+
+<div id="login">
+  <form name="form" (ngSubmit)="f.form.valid && enterChatRoom(userName.value)" #f="ngForm" novalidate>
+    <div class="form-group">
+      <div class="login-input-container">
+          <input type="text" class="login-input" name="userName" [(ngModel)]="model.userName" placeholder="{{inputData.placeholder}}" #userName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && userName.invalid }" required />
+      </div>
+      <div *ngIf="f.submitted && userName.invalid" class="invalid-feedback">
+          <div class="invalid">Please enter your name to start the chat</div>
+      </div>
+    </div>
+    <div class="login-btn-container">
+      <button class="login-btn">{{buttonData.content}}</button>
+    </div>
+  </form>
+</div>

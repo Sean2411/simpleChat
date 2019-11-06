@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="room-list">
+    <h2>{{userName}}</h2>
+    <p class="timer">Online for {{time | async }} minutes</p>
+    <ul>
+      <li *ngFor="let room of rooms; index as i">
+        <input id="{{room.name}}" type="radio" name="room" value="{{room.name}}" [(ngModel)]="selectedRoom">
+        <label for="{{room.name}}">{{room.name}}</label>
+      </li>
+    </ul>
+  </div>
+  <div class="messages" [ngSwitch]="selectedRoom">
+    <div class="messages-header">
+      <h2>{{selectedRoom}}</h2>
+      <div *ngFor="let roomDetail of roomDetails" class="room-users">
+        <div *ngIf="roomDetail.name == selectedRoom">
+          <p class="room-user" *ngFor="let name of roomDetail.users">
+            <i class="{{name === userName}}">{{name}}</i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="messages-container">
+      <div class="messages-history-container">
+        <div class="messages-history" *ngFor="let messages of messagesByRoom">
+          <div *ngSwitchCase="messages.roomName">
+            <div *ngFor="let message of messages.messages">
+              <div class="message-content {{message.name === userName}}">{{ message.message }}</div>
+              <div class="message-owner {{message.name === userName}}">{{ message.name }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="messages-input">
+      <input type="text" placeholder="Type a message..." #messageText />
+      <button (click)="sendMessage(messageText.value, selectedRoom); messageText.value=''">
+        Send
+      </button>
+    </div>
+
+  </div>
+
+
+</div>

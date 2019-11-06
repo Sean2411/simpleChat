@@ -1,0 +1,79 @@
+#login {
+  display: block;
+  margin-top: 20%;
+  position: fixed;
+  width: 30%;
+}
+.login-btn {
+  display: block;
+  float: left;
+  font-size: 16px;
+  text-align: center;
+  background-color: #ff1940;
+  border: 2px solid #ff1940;
+  color: #fff;
+  width: 302px;
+  height: 100%;
+  padding: 16px 0 16px 0;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.login-btn:hover {
+  background-color: #c90727;
+  border: 2px solid #c90727;
+}
+
+.login-input {
+  display: block;
+  float: left;
+  font-size: 16px;
+  text-align: center;
+  width: 300px;
+  height: 18px;
+  padding: 16px 0 16px 0;
+  margin: 8px;
+}
+
+.invalid {
+    display: block;
+    float: left;
+    font-size: 14px;
+    text-align: center;
+    color: #ff1940;
+    width: 302px;
+    height: 100%;
+    margin: 0 8px 8px 8px;
+}
+
+@media only screen and (min-width: 500px){
+  #login {
+    margin-left: 16%;
+  }
+}
+
+@media only screen and (min-width: 600px){
+  #login {
+    margin-left: 27%;
+  }
+}
+
+
+@media only screen and (min-width: 768px){
+  #login {
+    margin-left: 32%;
+  }
+}
+
+@media only screen and (min-width: 992px){
+  #login {
+    margin-left: 37.5%;
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  #login {
+    margin-left: 40%;
+  }
+}
+
